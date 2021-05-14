@@ -157,6 +157,16 @@ app.get('/users/:id/logout', (req, res) => {
 	})
 })
 
+app.get('/users/:id/rooms', (req, res) => {
+	const userId = req.params.id;
+	juserModel.findOne({'_id': userId}, (err, user) => {
+		res.send({'room': user.rooms});
+;	}).catch((err) => {
+		console.log(err);
+		res.send(301);
+	})
+})
+
 app.post('/users/:id/password', (req, res) => {
 	const userId = req.params.id;
 	const password = req.query.password
@@ -189,6 +199,17 @@ app.post('/login', (req, res) => {
 		} else {
 			res.send(301);
 		}
+	}).catch((err) => {
+		console.log(err);
+		res.send(301);
+	})
+})
+
+app.get('/rooms/:roomId/messages', (req, res) => {
+	const roomId = req.params.roomId;
+
+	RoomModel.findOne({'_id': roomId}, (err, room) => {
+		res.send({'messages': room.messages});
 	}).catch((err) => {
 		console.log(err);
 		res.send(301);
