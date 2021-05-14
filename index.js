@@ -31,13 +31,13 @@ function sendmail(user) {
 	var transporter = nodemailer.createTransport({
 		service: 'gmail',
 		auth: {
-			user: "vrghost.eip@gmail.com",
-			pass: "grossevache1"
+			user: 
+			pass:
 		}
 	});
 
 	var mailOptions = {
-		from: 'VRghost.project@gmail.com',
+		from: 
 		to: user._id,
 		subject: 'Activation de votre compte Vchat',
 		text: `Cliquez sur le lien pour activer votre compte:\nhttp://localhost:8080/api/users-creates/${user._id}/validation`,
