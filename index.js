@@ -216,6 +216,32 @@ app.get('/rooms/:roomId/messages', (req, res) => {
 	})
 })
 
+app.get('/rooms/:roomId/invited', (req, res) => {
+	const roomId = req.params.roomId;
+	const invId = req.query.invitedId
+
+	RoomModel.findOne({'_id': roomId}, (err, room) => {
+		room.invited.push(invId);
+		room.save().then((room) => {
+			juserModel.findOne({'_id': userId}, (err, user) => {
+				user.rooms.push(room._id);
+				user.save().then((user) => {
+					res.send(204);
+				}).catch((err) => {
+					console.log(err);
+					res.send(301);
+				});
+			}).catch((err) => {
+				console.log(err);
+				res.send(301);
+			})
+		})
+	}).catch((err) => {
+		console.log(err);
+		res.send(301);
+	})
+})
+
 app.post('/rooms/:userId', (req, res) => {
 	const userId = req.params.userId;
 
