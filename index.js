@@ -31,13 +31,13 @@ function sendmail(user) {
 	var transporter = nodemailer.createTransport({
 		service: 'gmail',
 		auth: {
-			user: 
+			user:
 			pass:
 		}
 	});
 
 	var mailOptions = {
-		from: 
+		from:
 		to: user._id,
 		subject: 'Activation de votre compte Vchat',
 		text: `Cliquez sur le lien pour activer votre compte:\nhttp://localhost:8080/api/users-creates/${user._id}/validation`,
@@ -223,7 +223,7 @@ app.get('/rooms/:roomId/invited', (req, res) => {
 	RoomModel.findOne({'_id': roomId}, (err, room) => {
 		room.invited.push(invId);
 		room.save().then((room) => {
-			juserModel.findOne({'_id': userId}, (err, user) => {
+			juserModel.findOne({'_id': invId}, (err, user) => {
 				user.rooms.push(room._id);
 				user.save().then((user) => {
 					res.send(204);

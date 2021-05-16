@@ -1,0 +1,174 @@
+{
+    "client": {
+        "host":  "10.101.53.35"
+    },
+    "server": {
+        "current_time": 1531680780,
+        "services": [
+            {
+                "name": "weather",
+                "widgets": [
+                    {
+                        "name": "city_weather",
+                        "description": "Affichage de la météo de la ville V",
+                        "params": [
+                            {
+                                "name": "city",
+                                "type": "string"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+
+                "name": "discord",
+                "widgets": [
+                    {
+                        "name": "channel",
+                        "description": "Réception des messages dans un channel C",
+                        "params": [
+                            {
+                                "name": "channel",
+                                "type": "string"
+                            },
+                            {
+                                "name": "limit",
+                                "type": "integereger"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "status",
+                        "description": "Affichage du status et du RichPresence d'un ami A",
+                        "params": [
+                            {
+                                "name": "friend",
+                                "type": "string"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "intra",
+                "widgets": [
+                    {
+                        "name": "planning",
+                        "description": "Affichage des activités du jour J",
+                        "params": [
+                            {
+                                "name": "year",
+                                "type": "string"
+                            },
+                            {
+                                "name": "month",
+                                "type": "string"
+                            },
+                            {
+                                "name": "day",
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "project",
+                        "description": "Affichage des infos du projet P",
+                        "params": [
+                            {
+                                "name": "year",
+                                "type": "string"
+                            },
+                            {
+                                "name": "module",
+                                "type": "string"
+                            },
+                            {
+                                "name": "instance",
+                                "type": "string"
+                            },
+                            {
+                                "name": "acti",
+                                "type": "string"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "rss",
+                "widgets": [
+                    {
+                        "name": "feed",
+                        "description": "Affichage des N derniers articles du feed F",
+                        "params": [
+                            {
+                                "name": "url",
+                                "type": "string"
+                            },
+                            {
+                                "name": "limit",
+                                "type": "integer"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Miscellaneous",
+                "widgets": [
+                    {
+                        "name": "joke",
+                        "description": "Affiche une blague d'une catégorie C avec possibilité de blacklister des thèmes T et/ou contenant des mots-clés M",
+                        "params": [
+                            {
+                                "name": "category",
+                                "type": "string"
+                            },
+                            {
+                                "name": "blacklist",
+                                "type": "string array"
+                            },
+                            {
+                                "name": "keyword",
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "exchange",
+                        "description": "Affiche le taux de conversion d'une monnaie M1 vers une monnaie M2",
+                        "params": [
+                            {
+                                "name": "currency1",
+                                "type": "string"
+                            },
+                            {
+                                "name": "currency2",
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "fflogs parses",
+                        "description": "Affiche les parses d'un personnage P, du monde M et de la région R pour le tier en cours",
+                        "params": [
+                            {
+                                "name": "character",
+                                "type": "string"
+                            },
+                            {
+                                "name": "world",
+                                "type": "string"
+                            },
+                            {
+                                "name": "region",
+                                "type": "string"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
