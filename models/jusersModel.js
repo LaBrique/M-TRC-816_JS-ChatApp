@@ -1,10 +1,13 @@
 const mongoose = require('mongoose');
 
 var juserSchema = new mongoose.Schema({
-    surname: String,
-    email: String,
+    username: { type: String, unique: true},
+    email: { type: String, unique: true},
     password: String,
-    rooms: [String],
+    rooms: [{
+		surname: String,
+		id: String
+	}],
     login: Boolean,
     confirmed: Boolean
 });

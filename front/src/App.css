@@ -15,7 +15,6 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,26 +36,142 @@
   }
 }
 
+.flex-container {
+	top: 10px;
+    display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+
+.flex-row {
+}
+
+.roomListBox {
+	flex: 1;
+}
+
+.chatRoomBox {
+	flex: 4;
+}
+
+.roomList {
+	text-align: left;
+}
+
+.chatRoom {
+	text-align: left;
+}
+
+.chatRoom ul {
+	overflow-y: scroll;
+	max-height: 840px;
+}
+
+.sender {
+	font-size: 16px;
+}
+
+.flex-child {
+    border: 2px solid yellow;
+}
+
+.flex-child:first-child {
+    margin-right: 5px;
+}
+
 nav {
+	position: flex;
+	width: 100%;
     background-color: rgba(255, 0, 0, 0.75);
 }
 
-ul {
+nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-li {
+nav li {
     display: inline;
     padding-left: 150px;
     padding-right: 150px;
+}
+
+#rooms {
+	list-style-type: none;
 }
 
 Link {
     display: block;
     background-color: #dddddd;
     font-size: 20px;
+}
+
+.chatRoom ul {
+	list-style-type: none;
+}
+
+.chatRoom #form1 {
+		background: rgba(0, 0, 0, 0.15);
+		padding: 0.25rem;
+		position: flex;
+		bottom: 50;
+		left: 0;
+		right: 0;
+		display: flex;
+		height: 3rem;
+		box-sizing: border-box;
+		backdrop-filter: blur(10px);
+}
+.chatRoom #input1 {
+		border: none;
+		padding: 0 1rem;
+		flex-grow: 1;
+		border-radius: 2rem;
+		margin: 0.25rem;
+}
+.chatRoom #input1:focus {
+		outline: none;
+}
+.chatRoom #form1 > #sendButton {
+		background: #333;
+		border: none;
+		padding: 0 1rem;
+		margin: 0.25rem;
+		border-radius: 3px;
+		outline: none;
+		color: #fff;
+}
+.chatRoom #form2 {
+		background: rgba(0, 0, 0, 0.15);
+		padding: 0.25rem;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		display: flex;
+		height: 3rem;
+		box-sizing: border-box;
+		backdrop-filter: blur(10px);
+}
+.chatRoom #input2 {
+		border: none;
+		padding: 0 1rem;
+		flex-grow: 1;
+		border-radius: 2rem;
+		margin: 0.25rem;
+}
+.chatRoom #input2:focus {
+		outline: none;
+}
+.chatRoom #form2 > button {
+		background: #333;
+		border: none;
+		padding: 0 1rem;
+		margin: 0.25rem;
+		border-radius: 3px;
+		outline: none;
+		color: #fff;
 }
 
 .login {
